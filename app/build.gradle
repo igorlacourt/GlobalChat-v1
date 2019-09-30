@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "app.lacourt.globalchat"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0-alpha03'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha03'
+
+    //UI
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //Firebase
+    implementation 'com.google.firebase:firebase-core:16.0.8'//16.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.2.1'//16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.1.0'
+    implementation 'com.google.firebase:firebase-storage:16.1.0'//16.0.1'
+//    implementation 'com.google.firebase:firebase-analytics:16.0.1'
+
+    // Room persistence
+    implementation 'androidx.room:room-runtime:2.0.0'
+    implementation 'androidx.room:room-rxjava2:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.0.0'
+
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.7'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    //ViewModel
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+//    implementation "androidx.lifecycle:lifecycle-viewmodel:2.0.0"
+
+    //Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+}
+apply plugin: 'com.google.gms.google-services'

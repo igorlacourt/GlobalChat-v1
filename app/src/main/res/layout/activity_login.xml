@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
+
+    <EditText
+        android:id="@+id/code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/code"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22"
+        android:visibility="invisible"/>
+
+    <EditText
+        android:id="@+id/country"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:hint="@string/country_code_example"
+        android:maxLines="1"
+        android:inputType="phone"
+        android:imeOptions="actionNext"
+        app:layout_constraintBottom_toTopOf="@+id/phone_number_login_button"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/tvCountry" />
+
+    <EditText
+        android:id="@+id/phone_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/phone_number_example"
+        android:inputType="phone"
+        android:maxLines="1"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toEndOf="@+id/country"
+        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+    <!--<androidx.appcompat.widget.AppCompatButton-->
+        <!--android:id="@+id/verify_code_button"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:background="@drawable/button_background"-->
+        <!--android:text="@string/verify_code"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="@color/buttonTextColor"-->
+        <!--app:layout_constraintStart_toEndOf="@id/code"-->
+        <!--app:layout_constraintEnd_toEndOf="@id/guideline10"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/code"/>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/phone_number_login_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_background"
+        android:text="@string/send_number"
+        android:textAllCaps="false"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number" />
+
+    <ImageButton
+        android:id="@+id/exit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circular_button"
+        android:onClick="onExit"
+        android:padding="4dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/guideline11"
+        app:srcCompat="@drawable/ic_close" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <TextView
+        android:id="@+id/tv_verification_failed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:text="@string/please_send_code_again"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/code"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/exit_button" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/country_code"
+        app:layout_constraintStart_toStartOf="@+id/country"
+        app:layout_constraintTop_toBottomOf="@+id/code"
+        tools:text="@string/country_code" />
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/phone_number"
+        app:layout_constraintStart_toStartOf="@+id/phone_number"
+        app:layout_constraintTop_toBottomOf="@+id/code"
+        tools:text="@string/phone_number" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
